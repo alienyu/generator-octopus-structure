@@ -1,0 +1,46 @@
+{
+  "name": "didi_h5",
+  "version": "1.0.0",
+  "description": "didi h5 structure",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "local-build": "NODE_ENV=local webpack --config webpack.release.config.js",
+    "test-build": "NODE_ENV=test webpack --config webpack.release.config.js",
+    "project-build": "NODE_ENV=prod webpack -p --config webpack.release.config.js",
+    "hybrid-build": "NODE_ENV=hybrid webpack -p --config webpack.release.config.js && zip -r hybridFiles/whole/rentCar_oversea.zip new-release && rm -r new-release",
+    "set-version": "git branch >> gitBranch.txt && git log -1 --pretty=format:'%H'>>gitLog.txt && node setHybridVersion.js && rm gitBranch.txt && rm gitLog.txt",
+    "hybrid-whole": "zip -r dist-project.zip ../dist-project",
+    "hybrid-update": "rm hybridFileList.txt && git diff cb7faf83 d0efe7ac --name-only>>hybridFileList.txt && node hybridList.js && cat hybridFileList.txt | xargs zip update.zip"
+  },
+  "dependencies": {
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "babel-register": "^6.0.0",
+    "child_process": "^1.0.2",
+    "colors": "^1.1.2",
+    "css-loader": "^0.23.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.9.0",
+    "less": "^2.6.0",
+    "less-loader": "^2.2.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "^2.18.0"
+  },
+  "author": "AlienYu",
+  "license": "MIT",
+  "devDependencies": {
+
+  }
+}
