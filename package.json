@@ -1,6 +1,6 @@
 {
   "name": "generator-octopus-structure",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "alienyu's private front end structure scaffold",
   "license": "MIT",
   "repository": "yeoman/generator-octopus-structure",
