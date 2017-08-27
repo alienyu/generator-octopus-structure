@@ -36,7 +36,7 @@ module.exports = class extends Generator {    // The name `constructor` is impor
     }
 
     writing() {
-        this.fs.copy(
+        this.fs.copyTpl(
             this.templatePath('html/index.html'),
             this.destinationPath('views/a.html'),
             {
